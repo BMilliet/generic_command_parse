@@ -5,19 +5,39 @@ module CLI
     include Singleton
 
     private
-    attr_accessor :templates
+    attr_accessor :commands
+    attr_accessor :subcommands
+    attr_accessor :global_flags
 
     public
-    def initialize()
-      @templates = []
+    def initialize
+      @commands = []
+      @subcommands = []
+      @global_flags = []
     end
 
-    def add(template)
-      @templates << template
+    def add_command(command)
+      @commands << command
     end
 
-    def get_templates()
-      @templates
+    def add_subcommand subcommand
+      @subcommands << subcommand
+    end
+
+    def add_global_flag flag
+      @global_flags << flag
+    end
+
+    def get_commands
+      @commands
+    end
+
+    def get_subcommands
+      @subcommands
+    end
+
+    def get_global_flag
+      @global_flags
     end
   end
 end
