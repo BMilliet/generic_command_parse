@@ -1,6 +1,5 @@
 module CLI
   class TemplateRegister
-    require 'singleton'
 
     include Singleton
 

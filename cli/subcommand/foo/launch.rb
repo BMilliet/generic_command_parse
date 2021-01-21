@@ -9,7 +9,8 @@ class Launch < SubCommand
     super
   end
 
-  def run
+  def run args
+    super
     puts 'run Foo launch command'
   end
 end

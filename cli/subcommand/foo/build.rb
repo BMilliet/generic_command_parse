@@ -9,7 +9,8 @@ class Build < SubCommand
     super
   end
 
-  def run
+  def run args
+    super
     puts 'run Foo build command'
   end
 end

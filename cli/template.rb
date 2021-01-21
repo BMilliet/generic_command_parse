@@ -1,6 +1,4 @@
 class Template
-  require 'optparse'
-  require_relative 'template_register'
 
   def initialize
     if self.is_a? Command
@@ -9,13 +7,12 @@ class Template
       CLI::TemplateRegister.instance.add_subcommand self
     end
   end
-
-  def run
-    raise NotImplementedError.new 'Must have run implementation'
-  end
 end
 
 class SubCommand < Template
+  def run args
+    (puts self.help; exit) if args.any? { |i| ['-h', '--help'].include? i }
+  end
 end
 
 class Command < Template
@@ -29,8 +26,8 @@ class Command < Template
       self.command_gen opt
     end
 
-    command.parse args
-    @main.run
+    command.parse args.shift
+    @main.run args
   end
 
   def command_gen opt

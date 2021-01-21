@@ -1,5 +1,6 @@
 module CLI
   require 'optparse'
+  require 'singleton'
   require_relative 'cli/template_register'
   require_relative 'cli/command_manager'
   require_relative 'cli/template'

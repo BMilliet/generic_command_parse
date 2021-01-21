@@ -9,7 +9,8 @@ class Run < SubCommand
     super
   end
 
-  def run
+  def run args
+    super
     puts 'run Bar run command'
   end
 end
