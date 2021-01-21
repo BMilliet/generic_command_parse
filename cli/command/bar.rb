@@ -1,7 +1,5 @@
-require_relative '../template'
-
 class Bar < Command
-  attr :desc, :short, :help, :long
+  attr :desc, :short, :help
 
   def initialize
     @short = '-bar'

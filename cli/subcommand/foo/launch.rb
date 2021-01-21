@@ -1,5 +1,3 @@
-require_relative '../../template'
-
 class Launch < SubCommand
   attr :desc, :short, :long, :help
 

@@ -1,5 +1,3 @@
-require_relative '../../template'
-
 class Run < SubCommand
   attr :desc, :short, :long, :help
 
